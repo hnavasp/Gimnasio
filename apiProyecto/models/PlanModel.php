@@ -11,7 +11,7 @@ class PlanModel
     public function all(){
         try {
             //Consulta sql
-            $vSql="SELECT * FROM gimnasio.plan order by nombre desc;";
+            $vSql="SELECT * FROM plan order by nombre desc;";
             //Ejecutar la consulta sql
             $vResultado=$this->enlace->ExecuteSQL($vSql);
             //Retornar la respuesta
@@ -22,6 +22,22 @@ class PlanModel
             die($e->getMessage());
         }
     }
-
+    public function get($id)
+    {
+        try {
+            $vSql = "SELECT * from plan where idplan = $id";
+            
+            //Ejecutar la consulta sql
+            $vResultado = $this->enlace->executeSQL($vSql);
+            if(!empty($vResultado)){
+                //Obtener objeto
+                $vResultado = $vResultado[0];
+            }
+            //Retornar la respuesta
+            return $vResultado;
+		} catch ( Exception $e ) {
+			die ( $e->getMessage () );
+		}
+    }
 
 }

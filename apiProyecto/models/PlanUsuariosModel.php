@@ -1,5 +1,5 @@
 <?php
-class PlanUsuarioModel
+class PlanUsuariosModel
 {
     public $enlace;
     public function __construct()

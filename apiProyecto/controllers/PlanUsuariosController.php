@@ -6,8 +6,8 @@ class planUsuario
     public function index()
     {
         //Obtener el listado del Modelo
-        $PlanUsuarioModel = new PlanUsuarioModel();
-        $response = $PlanUsuarioModel->allUsuario();
+        $PlanUsuariosModel = new PlanUsuariosModel();
+        $response = $PlanUsuariosModel->allUsuario();
         //Si hay respuesta
         if (isset($response) && !empty($response)) {
             //Armar el json
